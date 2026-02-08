@@ -797,7 +797,7 @@ export default function App() {
         </nav>
         <div style={s.sidebarUser} data-testid="user-menu-toggle" id="user-menu-toggle" aria-label="User Menu">
           <div style={s.userAvatar} data-testid="user-avatar">{user.name.charAt(0)}</div>
-          <div style={{ flex: 1 }}><div style={{ fontSize: 13, fontWeight: 600 }} data-testid="user-name">{user.name}</div><div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }} data-testid="user-role">{user.role}</div></div>
+          <div style={{ flex: 1 }} data-testid={`${user.role === "Admin" ? "system-admin" : user.role.toLowerCase().replace(/ /g, "-")}-profile`}><div style={{ fontSize: 13, fontWeight: 600 }} data-testid="user-name">{user.name}</div><div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }} data-testid="user-role">{user.role}</div></div>
           <button onClick={() => setUser(null)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.5)", cursor: "pointer", fontSize: 18, padding: 4 }} data-testid="btn-logout" id="btn-logout" aria-label="Logout" title="Logout">⏻</button>
         </div>
       </div>
