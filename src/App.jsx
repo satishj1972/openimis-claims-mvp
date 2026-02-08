@@ -544,7 +544,7 @@ function BatchPage({ batches, setBatches, claims }) {
       </div>
 
       <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
-        <button onClick={() => setShow(true)} style={s.btnPri} data-testid="btn-create-batch" id="btn-create-batch" aria-label="Create New Batch">+ Create Batch</button>
+        <button onClick={() => setShow(true)} style={s.btnPri} data-testid="button-create-batch" id="button-create-batch" aria-label="Create New Batch">+ Create Batch</button>
       </div>
 
       {running && (
