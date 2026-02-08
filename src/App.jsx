@@ -575,7 +575,7 @@ function BatchPage({ batches, setBatches, claims }) {
               <td style={s.td}><span style={s.badge(b.status)} data-testid={`batch-status-${b.id}`}>{b.status}</span></td>
               <td style={{ ...s.td, display: "flex", gap: 6 }}>
                 {b.status === "Created" && <button onClick={() => run(b)} style={{ ...s.btnOk, ...s.btnSm }} data-testid={`btn-run-batch-${b.id}`} aria-label={`Run batch ${b.id}`}>▶ Run</button>}
-                <button onClick={() => setDetail(b)} style={{ ...s.btnOut, ...s.btnSm }} data-testid={`btn-detail-batch-${b.id}`} aria-label={`View details for batch ${b.id}`}>Details</button>
+                <button onClick={() => setDetail(b)} style={{ ...s.btnOut, ...s.btnSm }} data-testid={`batch-details-${b.id}`} aria-label={`View details for batch ${b.id}`}>Details</button>
               </td>
             </tr>
           ))}</tbody>
@@ -585,7 +585,7 @@ function BatchPage({ batches, setBatches, claims }) {
       {show && (
         <div style={s.modal} data-testid="modal-create-batch" role="dialog" aria-label="Create New Batch" aria-modal="true">
           <div style={{ ...s.modalC, width: 700 }} data-testid="modal-content-create-batch">
-            <div style={s.modalT}><span data-testid="modal-title-batch">📦 Create New Batch Run</span><button onClick={() => setShow(false)} style={{ ...s.btnOut, ...s.btnSm }} data-testid="btn-close-batch-modal" aria-label="Close">✕</button></div>
+            <div style={s.modalT}><span data-testid="modal-title-batch">📦 Create New Batch Run</span><button onClick={() => setShow(false)} style={{ ...s.btnOut, ...s.btnSm }} data-testid="close-dialog-button" aria-label="Close">✕</button></div>
             <form onSubmit={create} data-testid="form-create-batch" id="form-create-batch">
               <div style={{ ...s.cardTitle, fontSize: 14, marginBottom: 16, color: c.priLt }}>Batch Configuration</div>
               <div style={s.formGrid}>
