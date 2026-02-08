@@ -795,7 +795,7 @@ export default function App() {
           <div style={s.navItem(page === "batch-processing")} onClick={() => setPage("batch-processing")} data-testid="nav-batch-processing" id="nav-batch-processing" role="button" aria-label="Batch Processing" aria-current={page === "batch-processing" ? "page" : undefined}><span style={s.navIcon}>📦</span> Batch Processing</div>
           <div style={s.navItem(page === "edi-transactions")} onClick={() => setPage("edi-transactions")} data-testid="nav-edi-transactions" id="nav-edi-transactions" role="button" aria-label="EDI Transactions" aria-current={page === "edi-transactions" ? "page" : undefined}><span style={s.navIcon}>📡</span> EDI Transactions</div>
         </nav>
-        <div style={s.sidebarUser} data-testid="sidebar-user-info">
+        <div style={s.sidebarUser} data-testid="user-menu-toggle" id="user-menu-toggle" aria-label="User Menu">
           <div style={s.userAvatar} data-testid="user-avatar">{user.name.charAt(0)}</div>
           <div style={{ flex: 1 }}><div style={{ fontSize: 13, fontWeight: 600 }} data-testid="user-name">{user.name}</div><div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }} data-testid="user-role">{user.role}</div></div>
           <button onClick={() => setUser(null)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.5)", cursor: "pointer", fontSize: 18, padding: 4 }} data-testid="btn-logout" id="btn-logout" aria-label="Logout" title="Logout">⏻</button>
