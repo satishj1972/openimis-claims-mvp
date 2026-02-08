@@ -215,7 +215,7 @@ function LoginPage({ onLogin }) {
       <div style={s.loginCard} data-testid="login-card">
         <div style={{ textAlign: "center", marginBottom: 24 }}>
           <div style={{ ...s.logoIcon, margin: "0 auto 16px", width: 56, height: 56, fontSize: 26 }}>⚕</div>
-          <div style={{ fontSize: 26, fontWeight: 800, color: c.txt, letterSpacing: "-0.5px" }} data-testid="login-title">Login - Claims Management System</div>
+          <div style={{ fontSize: 26, fontWeight: 800, color: c.txt, letterSpacing: "-0.5px" }} data-testid="login-title">Claims Management System</div>
           <div style={{ fontSize: 14, color: c.mut, marginTop: 4 }} data-testid="login-subtitle">OpenIMIS Healthcare Platform</div>
         </div>
         <form onSubmit={go} data-testid="login-form" id="login-form">
