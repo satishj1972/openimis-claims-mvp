@@ -618,7 +618,7 @@ function BatchPage({ batches, setBatches, claims }) {
       {detail && (
         <div style={s.modal} data-testid="modal-batch-detail" role="dialog" aria-label="Batch Details" aria-modal="true">
           <div style={{ ...s.modalC, width: 650 }} data-testid="modal-content-batch-detail">
-            <div style={s.modalT}><span data-testid="modal-detail-title">📦 Batch Details: {detail.id}</span><button onClick={() => setDetail(null)} style={{ ...s.btnOut, ...s.btnSm }} data-testid="btn-close-batch-detail" aria-label="Close Details">✕</button></div>
+            <div style={s.modalT}><span data-testid="modal-detail-title">📦 Batch Details: {detail.id}</span><button onClick={() => setDetail(null)} style={{ ...s.btnOut, ...s.btnSm }} data-testid="close-batch-details-modal" aria-label="Close Details">✕</button></div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }}>
               <div><span style={{ ...s.label, display: "block" }}>Batch Name</span><strong data-testid="detail-batch-name">{detail.name}</strong></div>
               <div><span style={{ ...s.label, display: "block" }}>Type</span><strong data-testid="detail-batch-type">{detail.type}</strong></div>
@@ -804,7 +804,7 @@ export default function App() {
 
       <div style={s.main} data-testid="main-content">
         <div style={s.header} data-testid="page-header">
-          <div><div style={{ fontSize: 22, fontWeight: 700, color: c.txt, letterSpacing: "-0.3px" }} data-testid="page-title">{cp.icon} {cp.title}</div><div style={{ fontSize: 13, color: c.mut, marginTop: 2 }} data-testid="page-breadcrumb">{cp.bc}</div></div>
+          <div><div style={{ fontSize: 22, fontWeight: 700, color: c.txt, letterSpacing: "-0.3px" }} data-testid="page-title">{cp.icon} {cp.title}</div><div style={{ fontSize: 13, color: c.mut, marginTop: 2 }} data-testid="page-breadcrumb">{cp.bc.split(" > ").map((part, i, arr) => { const navMap = { Home: "dashboard", Insurees: "enrollment", Claims: "claims-submit", "Batch Processing": "batch-processing", "EDI Transactions": "edi-transactions" }; const target = navMap[part]; return (<span key={i}>{i > 0 && " > "}{target ? <span onClick={() => setPage(target)} style={{ cursor: "pointer", textDecoration: "underline" }} data-testid={`breadcrumb-${part.toLowerCase().replace(/ /g, "-")}`} role="button" aria-label={`Navigate to ${part}`}>{part}</span> : <span>{part}</span>}</span>); })}</div></div>
           <span style={{ fontSize: 13, color: c.mut }} data-testid="header-user">Logged in as <strong>{user.username}</strong></span>
         </div>
         <div style={s.content} data-testid="page-content">
