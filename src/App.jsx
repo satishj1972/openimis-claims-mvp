@@ -77,7 +77,21 @@ const SAMPLE_BATCHES = [
 
 const SAMPLE_EDI = [
   { id: "EDI-2026-001", type: "EDI 837", direction: "Outbound", transactionId: "ST*837*0001", senderId: "OPENIMIS-001", receiverId: "PAYER-BCBS-001", claimCount: 3, totalAmount: 945.00, status: "Acknowledged", createdAt: "2026-01-31", transmittedAt: "2026-01-31", acknowledgedAt: "2026-02-01", segments: 47, errorCount: 0, batchId: "BATCH-2026-001", isa: "ISA*00*          *00*          *ZZ*OPENIMIS001    *ZZ*PAYERBCBS001   *260131*1423*^*00501*000000001*0*P*:~", gs: "GS*HC*OPENIMIS001*PAYERBCBS001*20260131*1423*1*X*005010X222A1~", st: "ST*837*0001*005010X222A1~" },
-  { id: "EDI-2026-002", type: "EDI 834", direction: "Outbound", transactionId: "ST*834*0001", senderId: "OPENIMIS-001", receiverId: "PAYER-BCBS-001", claimCount: 0, totalAmount: 0, status: "Transmitted", createdAt: "2026-02-01", transmittedAt: "2026-02-01", acknowledgedAt: "", segments: 28, errorCount: 0, batchId: "", isa: "ISA*00*          *00*          *ZZ*OPENIMIS001    *ZZ*PAYERBCBS001   *260201*0900*^*00501*000000002*0*P*:~", gs: "GS*BE*OPENIMIS001*PAYERBCBS001*20260201*0900*2*X*005010X220A1~", st: "ST*834*0001*005010X220A1~" },
+  { id: "EDI-2026-002", type: "EDI 834", direction: "Outbound", transactionId: "ST*834*0001", senderId: "OPENIMIS-001", receiverId: "PAYER-BCBS-001", claimCount: 0, totalAmount: 0, status: "Acknowledged", createdAt: "2026-02-01", transmittedAt: "2026-02-01", acknowledgedAt: "2026-02-01", segments: 42, errorCount: 0, batchId: "", enrollmentAction: "Add", memberCount: 3, planName: "BlueCross PPO Gold", sponsorName: "Northeast Regional Health Authority", isa: "ISA*00*          *00*          *ZZ*OPENIMIS001    *ZZ*PAYERBCBS001   *260201*0900*^*00501*000000002*0*P*:~", gs: "GS*BE*OPENIMIS001*PAYERBCBS001*20260201*0900*2*X*005010X220A1~", st: "ST*834*0001*005010X220A1~", memberSegments: [
+    { name: "Robert Anderson", memberId: "INS-100001", relationship: "Subscriber (18)", dob: "1980-03-15", gender: "M", ssn: "***-**-4521", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-01", ins: "INS*Y*18*021*28*A*E**FT~", ref: "REF*0F*INS-100001~", nm1: "NM1*IL*1*ANDERSON*ROBERT****34*INS-100001~", dmg: "DMG*D8*19800315*M~", dtp: "DTP*348*D8*20260201~", hd: "HD*021**HLT*BCBS-PPO-GOLD*EMP~" },
+    { name: "Maria Anderson", memberId: "INS-100002", relationship: "Spouse (01)", dob: "1982-07-22", gender: "F", ssn: "***-**-4522", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-01", ins: "INS*N*01*021*28*A*E**FT~", ref: "REF*0F*INS-100002~", nm1: "NM1*IL*1*ANDERSON*MARIA****34*INS-100002~", dmg: "DMG*D8*19820722*F~", dtp: "DTP*348*D8*20260201~", hd: "HD*021**HLT*BCBS-PPO-GOLD*ESP~" },
+    { name: "James Anderson", memberId: "INS-100003", relationship: "Child (19)", dob: "2010-11-05", gender: "M", ssn: "***-**-4523", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-01", ins: "INS*N*19*021*28*A*E**FT~", ref: "REF*0F*INS-100003~", nm1: "NM1*IL*1*ANDERSON*JAMES****34*INS-100003~", dmg: "DMG*D8*20101105*M~", dtp: "DTP*348*D8*20260201~", hd: "HD*021**HLT*BCBS-PPO-GOLD*ECH~" }
+  ] },
+  { id: "EDI-2026-006", type: "EDI 834", direction: "Outbound", transactionId: "ST*834*0002", senderId: "OPENIMIS-001", receiverId: "PAYER-BCBS-001", claimCount: 0, totalAmount: 0, status: "Transmitted", createdAt: "2026-02-07", transmittedAt: "2026-02-07", acknowledgedAt: "", segments: 38, errorCount: 0, batchId: "", enrollmentAction: "Add", memberCount: 4, planName: "BlueCross HMO Silver", sponsorName: "Southeast Community Health District", isa: "ISA*00*          *00*          *ZZ*OPENIMIS001    *ZZ*PAYERBCBS001   *260207*1030*^*00501*000000006*0*P*:~", gs: "GS*BE*OPENIMIS001*PAYERBCBS001*20260207*1030*6*X*005010X220A1~", st: "ST*834*0002*005010X220A1~", memberSegments: [
+    { name: "David Williams", memberId: "INS-100004", relationship: "Subscriber (18)", dob: "1975-09-28", gender: "M", ssn: "***-**-7834", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-07", ins: "INS*Y*18*021*28*A*E**FT~", ref: "REF*0F*INS-100004~", nm1: "NM1*IL*1*WILLIAMS*DAVID****34*INS-100004~", dmg: "DMG*D8*19750928*M~", dtp: "DTP*348*D8*20260207~", hd: "HD*021**HLT*BCBS-HMO-SILVER*EMP~" },
+    { name: "Sarah Williams", memberId: "INS-100005", relationship: "Spouse (01)", dob: "1978-04-12", gender: "F", ssn: "***-**-7835", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-07", ins: "INS*N*01*021*28*A*E**FT~", ref: "REF*0F*INS-100005~", nm1: "NM1*IL*1*WILLIAMS*SARAH****34*INS-100005~", dmg: "DMG*D8*19780412*F~", dtp: "DTP*348*D8*20260207~", hd: "HD*021**HLT*BCBS-HMO-SILVER*ESP~" },
+    { name: "Emily Williams", memberId: "INS-100006", relationship: "Child (19)", dob: "2012-01-18", gender: "F", ssn: "***-**-7836", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-07", ins: "INS*N*19*021*28*A*E**FT~", ref: "REF*0F*INS-100006~", nm1: "NM1*IL*1*WILLIAMS*EMILY****34*INS-100006~", dmg: "DMG*D8*20120118*F~", dtp: "DTP*348*D8*20260207~", hd: "HD*021**HLT*BCBS-HMO-SILVER*ECH~" },
+    { name: "Michael Williams", memberId: "INS-100007", relationship: "Child (19)", dob: "2015-06-30", gender: "M", ssn: "***-**-7837", coverage: "Health", maintenanceType: "021 - Addition", effectiveDate: "2026-02-07", ins: "INS*N*19*021*28*A*E**FT~", ref: "REF*0F*INS-100007~", nm1: "NM1*IL*1*WILLIAMS*MICHAEL****34*INS-100007~", dmg: "DMG*D8*20150630*M~", dtp: "DTP*348*D8*20260207~", hd: "HD*021**HLT*BCBS-HMO-SILVER*ECH~" }
+  ] },
+  { id: "EDI-2026-007", type: "EDI 834", direction: "Outbound", transactionId: "ST*834*0003", senderId: "OPENIMIS-001", receiverId: "PAYER-AETNA-001", claimCount: 0, totalAmount: 0, status: "Rejected", createdAt: "2026-02-08", transmittedAt: "2026-02-08", acknowledgedAt: "2026-02-08", segments: 32, errorCount: 1, batchId: "", enrollmentAction: "Change", memberCount: 2, planName: "Aetna EPO Bronze", sponsorName: "Northeast Regional Health Authority", isa: "ISA*00*          *00*          *ZZ*OPENIMIS001    *ZZ*PAYERAETNA001  *260208*1400*^*00501*000000007*0*P*:~", gs: "GS*BE*OPENIMIS001*PAYERAETNA001*20260208*1400*7*X*005010X220A1~", st: "ST*834*0003*005010X220A1~", memberSegments: [
+    { name: "John Thompson", memberId: "INS-100008", relationship: "Subscriber (18)", dob: "1988-12-03", gender: "M", ssn: "***-**-9156", coverage: "Health", maintenanceType: "024 - Change", effectiveDate: "2026-03-01", ins: "INS*Y*18*024*28*A*E**FT~", ref: "REF*0F*INS-100008~", nm1: "NM1*IL*1*THOMPSON*JOHN****34*INS-100008~", dmg: "DMG*D8*19881203*M~", dtp: "DTP*348*D8*20260301~", hd: "HD*024**HLT*AETNA-EPO-BRONZE*EMP~" },
+    { name: "Lisa Thompson", memberId: "INS-100009", relationship: "Spouse (01)", dob: "1990-05-17", gender: "F", ssn: "***-**-9157", coverage: "Health", maintenanceType: "024 - Change", effectiveDate: "2026-03-01", ins: "INS*N*01*024*28*A*E**FT~", ref: "REF*0F*INS-100009~", nm1: "NM1*IL*1*THOMPSON*LISA****34*INS-100009~", dmg: "DMG*D8*19900517*F~", dtp: "DTP*348*D8*20260301~", hd: "HD*024**HLT*AETNA-EPO-BRONZE*ESP~" }
+  ] },
   { id: "EDI-2026-003", type: "EDI 835", direction: "Inbound", transactionId: "ST*835*0001", senderId: "PAYER-BCBS-001", receiverId: "OPENIMIS-001", claimCount: 3, totalAmount: 890.00, status: "Validated", createdAt: "2026-02-02", transmittedAt: "2026-02-02", acknowledgedAt: "", segments: 52, errorCount: 0, batchId: "BATCH-2026-001", isa: "ISA*00*          *00*          *ZZ*PAYERBCBS001   *ZZ*OPENIMIS001    *260202*1100*^*00501*000000003*0*P*:~", gs: "GS*HP*PAYERBCBS001*OPENIMIS001*20260202*1100*3*X*005010X221A1~", st: "ST*835*0001*005010X221A1~" },
   { id: "EDI-2026-004", type: "EDI 999", direction: "Inbound", transactionId: "ST*999*0001", senderId: "PAYER-BCBS-001", receiverId: "OPENIMIS-001", claimCount: 0, totalAmount: 0, status: "Acknowledged", createdAt: "2026-02-01", transmittedAt: "2026-02-01", acknowledgedAt: "2026-02-01", segments: 12, errorCount: 0, batchId: "", isa: "ISA*00*          *00*          *ZZ*PAYERBCBS001   *ZZ*OPENIMIS001    *260201*1500*^*00501*000000004*0*P*:~", gs: "GS*FA*PAYERBCBS001*OPENIMIS001*20260201*1500*4*X*005010X231A1~", st: "ST*999*0001*005010X231A1~" },
   { id: "EDI-2026-005", type: "EDI 837", direction: "Outbound", transactionId: "ST*837*0002", senderId: "OPENIMIS-001", receiverId: "PAYER-AETNA-001", claimCount: 2, totalAmount: 685.00, status: "Rejected", createdAt: "2026-02-05", transmittedAt: "2026-02-05", acknowledgedAt: "2026-02-06", segments: 35, errorCount: 2, batchId: "BATCH-2026-002", isa: "ISA*00*          *00*          *ZZ*OPENIMIS001    *ZZ*PAYERAETNA001  *260205*0830*^*00501*000000005*0*P*:~", gs: "GS*HC*OPENIMIS001*PAYERAETNA001*20260205*0830*5*X*005010X222A1~", st: "ST*837*0002*005010X222A1~" },
@@ -725,17 +739,61 @@ function EDIPage({ edi, setEdi }) {
               {sel.batchId && <div><span style={{ ...s.label, display: "block" }}>Linked Batch</span><strong data-testid="edi-detail-batch">{sel.batchId}</strong></div>}
               {sel.claimCount > 0 && <div><span style={{ ...s.label, display: "block" }}>Claims</span><strong data-testid="edi-detail-claims">{sel.claimCount}</strong></div>}
               {sel.totalAmount > 0 && <div><span style={{ ...s.label, display: "block" }}>Total Amount</span><strong data-testid="edi-detail-amount">${sel.totalAmount.toFixed(2)}</strong></div>}
+              {sel.enrollmentAction && <div><span style={{ ...s.label, display: "block" }}>Enrollment Action</span><strong data-testid="edi-detail-enrollment-action">{sel.enrollmentAction}</strong></div>}
+              {sel.memberCount > 0 && <div><span style={{ ...s.label, display: "block" }}>Members</span><strong data-testid="edi-detail-member-count">{sel.memberCount}</strong></div>}
+              {sel.planName && <div><span style={{ ...s.label, display: "block" }}>Plan Name</span><strong data-testid="edi-detail-plan-name">{sel.planName}</strong></div>}
+              {sel.sponsorName && <div><span style={{ ...s.label, display: "block" }}>Sponsor</span><strong data-testid="edi-detail-sponsor">{sel.sponsorName}</strong></div>}
             </div>
             <div style={{ ...s.cardTitle, fontSize: 14, color: c.priLt }}>EDI Segment Data</div>
             <div style={s.code} data-testid="edi-segment-viewer" aria-label="EDI Segment Data">
               <div data-testid="edi-isa-segment"><span style={s.segLbl}>ISA</span> <span style={s.segVal}>{sel.isa}</span></div>
               <div data-testid="edi-gs-segment"><span style={s.segLbl}>GS </span> <span style={s.segVal}>{sel.gs}</span></div>
               <div data-testid="edi-st-segment"><span style={s.segLbl}>ST </span> <span style={s.segVal}>{sel.st}</span></div>
-              <div style={{ color: "#64748B", marginTop: 8 }}>... additional segments ({sel.segments - 3} more) ...</div>
+              {sel.memberSegments && sel.memberSegments.slice(0, 1).map((m, i) => (
+                <div key={i} style={{ marginTop: 8, borderTop: "1px solid #334155", paddingTop: 8 }} data-testid={`edi-member-segment-${i}`}>
+                  <div data-testid="edi-ins-segment"><span style={s.segLbl}>INS</span> <span style={s.segVal}>{m.ins}</span></div>
+                  <div data-testid="edi-ref-segment"><span style={s.segLbl}>REF</span> <span style={s.segVal}>{m.ref}</span></div>
+                  <div data-testid="edi-nm1-segment"><span style={s.segLbl}>NM1</span> <span style={s.segVal}>{m.nm1}</span></div>
+                  <div data-testid="edi-dmg-segment"><span style={s.segLbl}>DMG</span> <span style={s.segVal}>{m.dmg}</span></div>
+                  <div data-testid="edi-dtp-segment"><span style={s.segLbl}>DTP</span> <span style={s.segVal}>{m.dtp}</span></div>
+                  <div data-testid="edi-hd-segment"><span style={s.segLbl}>HD </span> <span style={s.segVal}>{m.hd}</span></div>
+                </div>
+              ))}
+              {sel.memberSegments && sel.memberSegments.length > 1 && <div style={{ color: "#64748B", marginTop: 8 }}>... {sel.memberSegments.length - 1} more member loop(s) ...</div>}
+              {!sel.memberSegments && <div style={{ color: "#64748B", marginTop: 8 }}>... additional segments ({sel.segments - 3} more) ...</div>}
               <div data-testid="edi-se-segment"><span style={s.segLbl}>SE </span> <span style={s.segVal}>SE*{sel.segments}*{sel.transactionId.split("*")[1]}~</span></div>
               <div data-testid="edi-ge-segment"><span style={s.segLbl}>GE </span> <span style={s.segVal}>GE*1*{sel.gs.split("*")[6]}~</span></div>
               <div data-testid="edi-iea-segment"><span style={s.segLbl}>IEA</span> <span style={s.segVal}>IEA*1*{sel.isa.split("*")[13]}~</span></div>
             </div>
+            {sel.memberSegments && <>
+            <div style={{ ...s.cardTitle, fontSize: 14, marginTop: 24, color: c.priLt }} data-testid="edi-834-member-header">👥 Member Enrollment Details ({sel.enrollmentAction})</div>
+            <div style={{ overflowX: "auto" }} data-testid="edi-834-member-table-wrap">
+              <table style={{ ...s.tbl, marginTop: 8 }} data-testid="edi-834-member-table">
+                <thead><tr>
+                  <th style={s.th} data-testid="th-834-member-name">Member Name</th>
+                  <th style={s.th} data-testid="th-834-member-id">Member ID</th>
+                  <th style={s.th} data-testid="th-834-relationship">Relationship</th>
+                  <th style={s.th} data-testid="th-834-dob">DOB</th>
+                  <th style={s.th} data-testid="th-834-gender">Gender</th>
+                  <th style={s.th} data-testid="th-834-coverage">Coverage</th>
+                  <th style={s.th} data-testid="th-834-action">Action</th>
+                  <th style={s.th} data-testid="th-834-effective">Effective</th>
+                </tr></thead>
+                <tbody>{sel.memberSegments.map((m, i) => (
+                  <tr key={i} style={s.tr} data-testid={`edi-834-member-row-${m.memberId}`}>
+                    <td style={s.td}><strong data-testid={`member-name-${m.memberId}`}>{m.name}</strong></td>
+                    <td style={s.td}><span style={{ fontFamily: "monospace", color: c.priLt }} data-testid={`member-id-${m.memberId}`}>{m.memberId}</span></td>
+                    <td style={s.td} data-testid={`member-relationship-${m.memberId}`}>{m.relationship}</td>
+                    <td style={s.td} data-testid={`member-dob-${m.memberId}`}>{m.dob}</td>
+                    <td style={s.td} data-testid={`member-gender-${m.memberId}`}>{m.gender}</td>
+                    <td style={s.td}><span style={s.badge("Transmitted")} data-testid={`member-coverage-${m.memberId}`}>{m.coverage}</span></td>
+                    <td style={s.td}><span style={s.badge(m.maintenanceType.includes("Addition") ? "Acknowledged" : "Validated")} data-testid={`member-action-${m.memberId}`}>{m.maintenanceType}</span></td>
+                    <td style={s.td} data-testid={`member-effective-${m.memberId}`}>{m.effectiveDate}</td>
+                  </tr>
+                ))}</tbody>
+              </table>
+            </div>
+            </>}
             <div style={{ ...s.cardTitle, fontSize: 14, marginTop: 24, color: c.priLt }}>Transaction Timeline</div>
             <div style={s.timeline} data-testid="edi-timeline">
               <div style={s.tlItem(true)} data-testid="edi-timeline-created"><div style={s.tlDot(c.acc)} /><div style={{ fontSize: 12, color: c.mut }}>Created</div><div style={{ fontWeight: 600 }}>{sel.createdAt}</div></div>
