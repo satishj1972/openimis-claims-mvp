@@ -46,7 +46,7 @@ const PROCEDURE_CODES = [
   { code: "99214", desc: "Office visit, established, mod-high", allowedAmt: 185.00 },
   { code: "99283", desc: "ED visit, moderate severity", allowedAmt: 450.00 },
   { code: "99385", desc: "Preventive medicine, 18-39 years", allowedAmt: 275.00 },
-  { code: "27447", desc: "Total knee replacement", allowedAmt: 22500.00 },
+  { code: "27447", desc: "Total knee replacement", allowedAmt: 2250.00 },
   { code: "70553", desc: "MRI brain with/without contrast", allowedAmt: 1200.00 },
   { code: "80053", desc: "Comprehensive metabolic panel", allowedAmt: 45.00 },
   { code: "93000", desc: "Electrocardiogram, complete", allowedAmt: 85.00 },
@@ -58,7 +58,7 @@ const FEE_SCHEDULE = [
   { cptCode: "99214", description: "Office visit, established, mod-high", category: "E&M", billedAvg: 350.00, allowedAmount: 185.00, medicareRate: 165.00 },
   { cptCode: "99283", description: "ED visit, moderate severity", category: "Emergency", billedAvg: 850.00, allowedAmount: 450.00, medicareRate: 380.00 },
   { cptCode: "99385", description: "Preventive medicine, 18-39 years", category: "Preventive", billedAvg: 450.00, allowedAmount: 275.00, medicareRate: 240.00 },
-  { cptCode: "27447", description: "Total knee replacement", category: "Surgery", billedAvg: 45000.00, allowedAmount: 22500.00, medicareRate: 18000.00 },
+  { cptCode: "27447", description: "Total knee replacement", category: "Surgery", billedAvg: 4500.00, allowedAmount: 2250.00, medicareRate: 1800.00 },
   { cptCode: "70553", description: "MRI brain with/without contrast", category: "Radiology", billedAvg: 2800.00, allowedAmount: 1200.00, medicareRate: 950.00 },
   { cptCode: "80053", description: "Comprehensive metabolic panel", category: "Lab", billedAvg: 120.00, allowedAmount: 45.00, medicareRate: 35.00 },
   { cptCode: "93000", description: "Electrocardiogram, complete", category: "Cardiology", billedAvg: 200.00, allowedAmount: 85.00, medicareRate: 70.00 },
@@ -131,7 +131,7 @@ const SAMPLE_MEMBERS = [
   { id: "MBR-100002", name: "Maria Garcia", dob: "1990-07-22", gender: "Female", ssn: "***-**-7832", address: "456 Pine Ave, Miami, FL 33101", phone: "(555) 202-3002", email: "m.garcia@email.com", planId: "INS-100002", planCode: "HMO-STD-2026", planName: "HMO Standard", groupNo: "GRP-5002", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 0, outOfPocketUsed: 450 }, dependents: [{ name: "Carlos Garcia", rel: "Spouse", dob: "1988-02-10", status: "Active" }] },
   { id: "MBR-100003", name: "James Wilson", dob: "1978-11-05", gender: "Male", ssn: "***-**-9145", address: "789 Elm Dr, Denver, CO 80201", phone: "(555) 303-4003", email: "j.wilson@email.com", planId: "INS-100003", planCode: "PPO-SLV-2026", planName: "PPO Silver", groupNo: "GRP-5003", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 0, outOfPocketUsed: 890 }, dependents: [] },
   { id: "MBR-100004", name: "Emily Chen", dob: "1992-01-30", gender: "Female", ssn: "***-**-2678", address: "321 Maple Ln, Seattle, WA 98101", phone: "(555) 404-5004", email: "e.chen@email.com", planId: "INS-100004", planCode: "HMO-PLS-2026", planName: "HMO Plus", groupNo: "GRP-5004", effectiveDate: "2025-01-01", termDate: "2025-12-31", status: "Inactive", benefitUsed: { inpatient: 0, outOfPocketUsed: 0 }, dependents: [] },
-  { id: "MBR-100005", name: "William Thompson", dob: "1955-09-18", gender: "Male", ssn: "***-**-3389", address: "654 Cedar Ct, Tampa, FL 33602", phone: "(555) 505-6005", email: "w.thompson@email.com", planId: "INS-100005", planCode: "MCR-ADV-2026", planName: "Medicare Advantage", groupNo: "GRP-5005", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 35000, outOfPocketUsed: 4200 }, dependents: [{ name: "Margaret Thompson", rel: "Spouse", dob: "1957-03-25", status: "Active" }] },
+  { id: "MBR-100005", name: "William Thompson", dob: "1955-09-18", gender: "Male", ssn: "***-**-3389", address: "654 Cedar Ct, Tampa, FL 33602", phone: "(555) 505-6005", email: "w.thompson@email.com", planId: "INS-100005", planCode: "MCR-ADV-2026", planName: "Medicare Advantage", groupNo: "GRP-5005", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 3500, outOfPocketUsed: 4200 }, dependents: [{ name: "Margaret Thompson", rel: "Spouse", dob: "1957-03-25", status: "Active" }] },
   { id: "MBR-100006", name: "Sarah Mitchell", dob: "1988-06-14", gender: "Female", ssn: "***-**-5544", address: "987 Birch Rd, Chicago, IL 60601", phone: "(555) 606-7006", email: "s.mitchell@email.com", planId: "INS-100006", planCode: "PPO-GOLD-2026", planName: "PPO Gold Plus", groupNo: "GRP-5001", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 0, outOfPocketUsed: 175 }, dependents: [] },
   { id: "MBR-100007", name: "David Kim", dob: "1972-12-03", gender: "Male", ssn: "***-**-8877", address: "147 Walnut St, Portland, OR 97201", phone: "(555) 707-8007", email: "d.kim@email.com", planId: "INS-100007", planCode: "HDHP-BRZ-2026", planName: "HDHP Bronze", groupNo: "GRP-5006", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 0, outOfPocketUsed: 3200 }, dependents: [{ name: "Jennifer Kim", rel: "Spouse", dob: "1975-08-19", status: "Active" }, { name: "Alex Kim", rel: "Child", dob: "2010-04-12", status: "Active" }] },
   { id: "MBR-100008", name: "Lisa Rodriguez", dob: "1995-04-28", gender: "Female", ssn: "***-**-1122", address: "258 Spruce Way, Phoenix, AZ 85001", phone: "(555) 808-9008", email: "l.rodriguez@email.com", planId: "INS-100008", planCode: "HMO-STD-2026", planName: "HMO Standard", groupNo: "GRP-5002", effectiveDate: "2026-01-01", termDate: "2026-12-31", status: "Active", benefitUsed: { inpatient: 0, outOfPocketUsed: 120 }, dependents: [] },
@@ -142,7 +142,7 @@ const SAMPLE_CLAIMS = [
   { id: "CLM-2026-002", memberId: "MBR-100002", planId: "INS-100002", patientName: "Maria Garcia", facility: "Cleveland Clinic", facilityNpi: "2345678901", visitType: "Emergency", diagnosisCode: "S82.001A", procedureCode: "99283", serviceDate: "2026-01-16", billedAmount: 850.00, allowedAmount: 450.00, status: "Under Review", priority: "High", submittedDate: "2026-01-17", carcCode: "", notes: "" },
   { id: "CLM-2026-003", memberId: "MBR-100003", planId: "INS-100003", patientName: "James Wilson", facility: "Johns Hopkins Hospital", facilityNpi: "3456789012", visitType: "Outpatient", diagnosisCode: "M54.5", procedureCode: "99214", serviceDate: "2026-01-17", billedAmount: 350.00, allowedAmount: 185.00, status: "Approved", priority: "Low", submittedDate: "2026-01-18", carcCode: "", notes: "" },
   { id: "CLM-2026-004", memberId: "MBR-100004", planId: "INS-100004", patientName: "Emily Chen", facility: "Stanford Health Care", facilityNpi: "5678901234", visitType: "Outpatient", diagnosisCode: "E11.9", procedureCode: "99214", serviceDate: "2026-01-18", billedAmount: 350.00, allowedAmount: 185.00, status: "Submitted", priority: "Medium", submittedDate: "2026-01-19", carcCode: "", notes: "" },
-  { id: "CLM-2026-005", memberId: "MBR-100005", planId: "INS-100005", patientName: "William Thompson", facility: "Mass General Hospital", facilityNpi: "4567890123", visitType: "Inpatient", diagnosisCode: "I10", procedureCode: "27447", serviceDate: "2026-01-10", billedAmount: 45000.00, allowedAmount: 22500.00, status: "Submitted", priority: "High", submittedDate: "2026-01-11", carcCode: "", notes: "" },
+  { id: "CLM-2026-005", memberId: "MBR-100005", planId: "INS-100005", patientName: "William Thompson", facility: "Mass General Hospital", facilityNpi: "4567890123", visitType: "Inpatient", diagnosisCode: "I10", procedureCode: "27447", serviceDate: "2026-01-10", billedAmount: 4500.00, allowedAmount: 2250.00, status: "Submitted", priority: "High", submittedDate: "2026-01-11", carcCode: "", notes: "" },
   { id: "CLM-2026-006", memberId: "MBR-100006", planId: "INS-100006", patientName: "Sarah Mitchell", facility: "Mount Sinai Hospital", facilityNpi: "6789012345", visitType: "Preventive", diagnosisCode: "Z00.00", procedureCode: "99385", serviceDate: "2026-01-20", billedAmount: 450.00, allowedAmount: 275.00, status: "Submitted", priority: "Low", submittedDate: "2026-01-21", carcCode: "", notes: "" },
   { id: "CLM-2026-007", memberId: "MBR-100007", planId: "INS-100007", patientName: "David Kim", facility: "Cedars-Sinai Medical Center", facilityNpi: "7890123456", visitType: "Outpatient", diagnosisCode: "K21.0", procedureCode: "80053", serviceDate: "2026-01-22", billedAmount: 120.00, allowedAmount: 45.00, status: "Under Review", priority: "Medium", submittedDate: "2026-01-23", carcCode: "", notes: "" },
   { id: "CLM-2026-008", memberId: "MBR-100008", planId: "INS-100008", patientName: "Lisa Rodriguez", facility: "Duke University Hospital", facilityNpi: "8901234567", visitType: "Outpatient", diagnosisCode: "R50.9", procedureCode: "93000", serviceDate: "2026-01-24", billedAmount: 200.00, allowedAmount: 85.00, status: "Submitted", priority: "Medium", submittedDate: "2026-01-25", carcCode: "", notes: "" },
@@ -591,11 +591,18 @@ function AdjudicationModal({ claim, onClose, onAdjudicate, members }) {
   const diagDesc = DIAGNOSIS_CODES.find(d => d.code === claim.diagnosisCode)?.desc || "";
   const procDesc = PROCEDURE_CODES.find(p => p.code === claim.procedureCode)?.desc || "";
 
-  // Validation checks
-  const isEligible = member?.status === "Active";
-  const isInNetwork = facility?.networkStatus === "In-Network";
-  const hasMemberData = !!(claim.memberId && claim.facilityNpi && claim.serviceDate);
-  const isDuplicate = claim.notes?.toLowerCase().includes("duplicate");
+  // Auto-computed validation checks
+  const autoDataIntegrity = !!(claim.memberId && claim.facilityNpi && claim.serviceDate);
+  const autoEligible = member?.status === "Active";
+  const autoNoDuplicate = !claim.notes?.toLowerCase().includes("duplicate");
+  const autoInNetwork = facility?.networkStatus === "In-Network";
+
+  // Editable overrides (initialized from auto-computed)
+  const [chkDataIntegrity, setChkDataIntegrity] = useState(autoDataIntegrity);
+  const [chkEligible, setChkEligible] = useState(autoEligible);
+  const [chkNoDuplicate, setChkNoDuplicate] = useState(autoNoDuplicate);
+  const [chkInNetwork, setChkInNetwork] = useState(autoInNetwork);
+
   const contractualAdj = claim.billedAmount - parseFloat(allowedAmt || 0);
 
   const handleSubmit = () => {
@@ -603,7 +610,8 @@ function AdjudicationModal({ claim, onClose, onAdjudicate, members }) {
     onAdjudicate(claim.id, decision, carcCode, notes, parseFloat(allowedAmt));
   };
 
-  const checkStyle = (pass) => ({ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", borderRadius: 6, background: pass ? colors.successLight : colors.dangerLight, fontSize: 13, marginBottom: 8 });
+  const checkStyle = (pass) => ({ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", borderRadius: 6, background: pass ? colors.successLight : colors.dangerLight, fontSize: 13, marginBottom: 8, cursor: "pointer", transition: "background 0.2s" });
+  const checkboxStyle = { width: 18, height: 18, cursor: "pointer", accentColor: colors.primary };
 
   return (
     <div style={styles.modal} data-testid="adjudication-modal" id="adjudication-modal" onClick={onClose}>
@@ -632,25 +640,28 @@ function AdjudicationModal({ claim, onClose, onAdjudicate, members }) {
           </div>
         </div>
 
-        {/* Stage 2: Validation Checks */}
+        {/* Stage 2: Validation Checks - EDITABLE */}
         <div style={{ ...styles.card, background: colors.bg }}>
-          <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 12, color: colors.primary }}>✅ VALIDATION CHECKS (Three-Way Match)</div>
-          <div style={checkStyle(hasMemberData)} data-testid="check-data-integrity">
-            <span>{hasMemberData ? "✅" : "❌"}</span>
-            <span><strong>Data Integrity:</strong> Member ID, NPI, and Dates {hasMemberData ? "present and clear" : "— Missing data (CO-16)"}</span>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: colors.primary }}>{chkDataIntegrity && chkEligible && chkNoDuplicate && chkInNetwork ? "✅" : "⚠️"} VALIDATION CHECKS (Three-Way Match)</div>
+            <div style={{ fontSize: 10, color: colors.textMuted, fontStyle: "italic" }}>Click checkboxes to override</div>
           </div>
-          <div style={checkStyle(isEligible)} data-testid="check-eligibility">
-            <span>{isEligible ? "✅" : "❌"}</span>
-            <span><strong>Eligibility:</strong> Plan {isEligible ? `active (${member?.planName})` : "inactive on Date of Service (CO-27)"}</span>
-          </div>
-          <div style={checkStyle(!isDuplicate)} data-testid="check-duplicate">
-            <span>{isDuplicate ? "⚠️" : "✅"}</span>
-            <span><strong>Duplicate Check:</strong> {isDuplicate ? "Potential duplicate detected (CO-18)" : "No duplicate claims found"}</span>
-          </div>
-          <div style={checkStyle(isInNetwork)} data-testid="check-network">
-            <span>{isInNetwork ? "✅" : "⚠️"}</span>
-            <span><strong>Network Status:</strong> {facility?.name} is <strong>{facility?.networkStatus}</strong>{!isInNetwork ? " — OON deductible penalty applies" : ""}</span>
-          </div>
+          <label style={checkStyle(chkDataIntegrity)} data-testid="check-data-integrity">
+            <input type="checkbox" checked={chkDataIntegrity} onChange={e => setChkDataIntegrity(e.target.checked)} style={checkboxStyle} data-testid="chk-data-integrity" />
+            <span><strong>Data Integrity:</strong> Member ID, NPI, and Dates {chkDataIntegrity ? "present and clear" : "— Missing data (CO-16)"}</span>
+          </label>
+          <label style={checkStyle(chkEligible)} data-testid="check-eligibility">
+            <input type="checkbox" checked={chkEligible} onChange={e => setChkEligible(e.target.checked)} style={checkboxStyle} data-testid="chk-eligibility" />
+            <span><strong>Eligibility:</strong> Plan {chkEligible ? `active (${member?.planName || "Unknown"})` : "inactive on Date of Service (CO-27)"}</span>
+          </label>
+          <label style={checkStyle(chkNoDuplicate)} data-testid="check-duplicate">
+            <input type="checkbox" checked={chkNoDuplicate} onChange={e => setChkNoDuplicate(e.target.checked)} style={checkboxStyle} data-testid="chk-duplicate" />
+            <span><strong>Duplicate Check:</strong> {chkNoDuplicate ? "No duplicate claims found" : "Potential duplicate detected (CO-18)"}</span>
+          </label>
+          <label style={checkStyle(chkInNetwork)} data-testid="check-network">
+            <input type="checkbox" checked={chkInNetwork} onChange={e => setChkInNetwork(e.target.checked)} style={checkboxStyle} data-testid="chk-network" />
+            <span><strong>Network Status:</strong> {facility?.name || "Unknown"} is <strong>{chkInNetwork ? "In-Network" : "Out-of-Network"}</strong>{!chkInNetwork ? " — OON deductible penalty applies" : ""}</span>
+          </label>
         </div>
 
         {/* Stage 3: Pricing */}
@@ -1144,7 +1155,7 @@ export default function App() {
         <div style={styles.sidebarUser} data-testid="sidebar-user-info">
           <div style={styles.userAvatar} data-testid="user-avatar">{user.name.charAt(0)}</div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 13, fontWeight: 600 }} data-testid="user-name">{user.name}</div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "#FFFFFF" }} data-testid="user-name">{user.name}</div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }} data-testid="user-role">{user.role}</div>
           </div>
           <button onClick={() => setUser(null)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.5)", cursor: "pointer", fontSize: 18, padding: 4 }} data-testid="btn-logout" id="btn-logout" aria-label="Logout" title="Logout">⏻</button>
